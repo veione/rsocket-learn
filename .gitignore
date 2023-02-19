@@ -1,0 +1,8 @@
+# Project exclude paths
+/rsocket-example/target/
+/rsocket-sample-client/target/
+/rsocket-sample-model/target/
+/rsocket-sample-protobuf/target/
+/rsocket-sample-server/target/
+/rsocket-setup-client/target/
+/rsocket-setup-server/target/

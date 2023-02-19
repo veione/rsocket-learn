@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package doodle.broker;
+
+option java_package = "org.doodle.broker";
+option java_outer_classname = "BrokerFrameProto";
+option java_multiple_files = true;
+
+import "broker/address.proto";
+import "broker/route_setup.proto";
+import "broker/route_join.proto";
+import "broker/broker_info.proto";
+
+message BrokerFrame {
+  oneof frame {
+    BrokerAddress address = 1;
+    BrokerRouteSetup route_setup = 2;
+    BrokerRouteJoin route_join = 3;
+    BrokerInfo broker_info = 4;
+  }
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>rsocket.sample</groupId>
+    <artifactId>rsocket-sample</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <file.encoding>UTF-8</file.encoding>
+        <plugin.maven-compiler.version>3.8.1</plugin.maven-compiler.version>
+        <plugin.os-maven.version>1.6.2</plugin.os-maven.version>
+        <plugin.protobuf-maven.version>0.6.1</plugin.protobuf-maven.version>
+        <dep.protobuf.version>3.21.5</dep.protobuf.version>
+    </properties>
+
+    <modules>
+        <module>rsocket-sample-protobuf</module>
+        <module>rsocket-sample-server</module>
+        <module>rsocket-sample-client</module>
+        <module>rsocket-sample-model</module>
+        <module>rsocket-example</module>
+        <module>rsocket-setup-server</module>
+        <module>rsocket-setup-client</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.5.1</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${file.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package doodle.broker;
+
+option java_package = "org.doodle.broker";
+option java_outer_classname = "BrokerRouteJoinProto";
+option java_multiple_files = true;
+
+message BrokerRouteJoin {
+
+}

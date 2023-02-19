@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package doodle.broker;
+
+option java_package = "org.doodle.broker";
+option java_outer_classname = "BrokerRouteSetupProto";
+option java_multiple_files = true;
+
+import "broker/route_id.proto";
+
+message BrokerRouteSetup {
+  BrokerRouteId route_id = 1;
+  map<string, string> tags = 2;
+}
