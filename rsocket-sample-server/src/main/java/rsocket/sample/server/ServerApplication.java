@@ -12,7 +12,8 @@ public class ServerApplication {
 
     @Bean
     public RSocketStrategiesCustomizer customizer() {
-        return strategies -> strategies.encoder(new ProtobufEncoder())
+        return strategies -> strategies
+                .encoder(new ProtobufEncoder())
                 .decoder(new ProtobufDecoder());
     }
 

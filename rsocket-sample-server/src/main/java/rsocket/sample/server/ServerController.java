@@ -1,7 +1,5 @@
 package rsocket.sample.server;
 
-import io.rsocket.core.RSocketClient;
-import org.doodle.broker.BrokerAddress;
 import org.doodle.broker.BrokerFrame;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,7 +47,10 @@ public class ServerController {
     public void sample(@Header(name = "broker-frame") BrokerFrame frame) {
         System.out.println("server receive message:" + frame);
         CLIENTS.forEach(client-> {
-            client.route("hello").metadata(frame, ROUTING_FRAME_TYPE).send().subscribe();
+            client.route("hello")
+                    .metadata(frame, ROUTING_FRAME_TYPE)
+                    .send()
+                    .subscribe(System.out::println);
         });
     }
 
